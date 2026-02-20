@@ -3,16 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lotto Number Generator</title>
+    <title>Lotto & Order Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Lotto Number Generator</h1>
-        <p>Click the button to generate 5 sets of lotto numbers.</p>
-        <button id="generate-btn">Generate Numbers</button>
-        <div id="lotto-tickets"></div>
-    </div>
+    <main class="main-content">
+        <div class="container card">
+            <h1>Lotto Number Generator</h1>
+            <p>Click the button to generate 5 sets of lotto numbers.</p>
+            <button id="generate-btn" class="btn btn-primary">
+                <ion-icon name="dice-outline"></ion-icon>
+                Generate Numbers
+            </button>
+            <div id="lotto-tickets"></div>
+        </div>
+
+        <div class="form-container card">
+            <h2>Place Your Order</h2>
+            <form action="https://formspree.io/f/meellbej" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="_replyto" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="order-details">Order Details</label>
+                    <textarea id="order-details" name="order-details" rows="5" required placeholder="Describe your order"></textarea>
+                </div>
+                <button type="submit" class="btn btn-secondary">
+                    <ion-icon name="send-outline"></ion-icon>
+                    Submit Order
+                </button>
+            </form>
+        </div>
+    </main>
     <script src="main.js" type="module"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
